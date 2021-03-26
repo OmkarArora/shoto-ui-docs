@@ -38,6 +38,9 @@ function App() {
         <Route path="/snackbars">
           <Snackbars/>
         </Route>
+        <Route path="/">
+          <GettingStarted/>
+        </Route>
       </Switch>
         </div>
       </div>
