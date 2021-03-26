@@ -2,13 +2,13 @@ import { Avatar } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { AiOutlineGithub } from "react-icons/ai";
+import "./docs-style.css";
 
 export const Avatars = () => {
   const imageCodeString = `import React from "react";
-import ReactDOM from "react-dom";
 import { Avatar } from "shoto-ui;
 	
-function App() {
+function AvatarComp() {
 	return (
 		<Avatar alt="John Doe" src="https://via.placeholder.com/150/FF0000/FFF" />
 	);

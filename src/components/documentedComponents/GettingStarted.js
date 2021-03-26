@@ -1,6 +1,7 @@
 import { Avatar } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import "./docs-style.css";
 
 export const GettingStarted = () => {
 
@@ -12,7 +13,9 @@ function App() {
 	return (
 		<Avatar alt="John Doe" src="https://via.placeholder.com/150" />
 	);
-}`;
+}
+
+ReactDOM.render(<App />, document.querySelector('#app'));`;
 
   return (
     <div className="container-content">

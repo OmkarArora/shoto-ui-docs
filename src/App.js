@@ -1,4 +1,4 @@
-import { Header, Sidenav, GettingStarted, Avatars, Alerts } from "./components";
+import { Header, Sidenav, GettingStarted, Avatars, Alerts, Badges, Cards, Tags, Ratings, Snackbars } from "./components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
@@ -22,6 +22,21 @@ function App() {
         </Route>
         <Route path="/alerts">
           <Alerts/>
+        </Route>
+        <Route path="/badges">
+          <Badges/>
+        </Route>
+        <Route path="/cards">
+          <Cards/>
+        </Route>
+        <Route path="/tags">
+          <Tags/>
+        </Route>
+        <Route path="/ratings">
+          <Ratings/>
+        </Route>
+        <Route path="/snackbars">
+          <Snackbars/>
         </Route>
       </Switch>
         </div>
