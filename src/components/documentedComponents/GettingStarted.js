@@ -26,7 +26,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));`;
       </div>
       <h2>npm</h2>
       <div className="container-code">
-        <SyntaxHighliter language="javascript" style={vscDarkPlus} wrapLongLines={true}>>
+        <SyntaxHighliter language="javascript" style={vscDarkPlus} wrapLongLines={true}>
           npm install shoto-ui
         </SyntaxHighliter>
       </div>

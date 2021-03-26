@@ -1,3 +1,8 @@
+.text-highlight {
+  color: rgb(220, 0, 78);
+  font-weight: 500;
+}
+
 .container-alert {
   display: flex;
   flex-direction: column;

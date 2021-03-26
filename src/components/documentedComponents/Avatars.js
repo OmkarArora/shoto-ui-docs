@@ -55,7 +55,7 @@ function App() {
 	);
 }`;
 
-const iconCodeString = `import React from "react";
+  const iconCodeString = `import React from "react";
 import ReactDOM from "react-dom";
 import { Avatar } from "shoto-ui;
 import { AiOutlineGithub } from "react-icons/ai";
@@ -71,7 +71,7 @@ function App() {
 	);
 }`;
 
-const fallbackCodeString = `import React from "react";
+  const fallbackCodeString = `import React from "react";
 import ReactDOM from "react-dom";
 import { Avatar } from "shoto-ui;
 
@@ -153,10 +153,15 @@ function App() {
         </SyntaxHighliter>
       </div>
 
-	  <h2>Icon Avatars</h2>
-	  <div className="subtext">Icon avatars are created by passing an icon as <span className="text-highlight">children</span>.</div>
+      <h2>Icon Avatars</h2>
+      <div className="subtext">
+        Icon avatars are created by passing an icon as{" "}
+        <span className="text-highlight">children</span>.
+      </div>
       <div className="container-output">
-        <Avatar><AiOutlineGithub/></Avatar>
+        <Avatar>
+          <AiOutlineGithub />
+        </Avatar>
         <Avatar alt="User" bgColor="black">
           <svg
             version="1.1"
@@ -201,11 +206,14 @@ function App() {
 
       <h2>Fallbacks</h2>
       <div className="subtext">
-      If there is an error loading the avatar image, the component falls back to take the first character of the <span className="text-highlight">alt</span> attribute, or the character 'Z' if it is not passed.
+        If there is an error loading the avatar image, the component falls back
+        to take the first character of the{" "}
+        <span className="text-highlight">alt</span> attribute, or the character
+        'Z' if it is not passed.
       </div>
       <div className="container-output">
-        <Avatar src="./broken-image.png"/>
-        <Avatar alt="John Doe" bgColor="red" src="./broken-image.jpg"/>
+        <Avatar src="./broken-image.png" />
+        <Avatar alt="John Doe" bgColor="red" src="./broken-image.jpg" />
       </div>
       <div className="container-code">
         <SyntaxHighliter

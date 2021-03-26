@@ -10,7 +10,7 @@ export const Snackbars = () => {
   const snackbarCodeString = `import React, {useState} from "react";
 import { Snackbar, Alert } from "shoto-ui";
 
-function SampleComponent() {
+function SnackbarComp() {
 	const [snackbarOpen, setSnackbar] = useState(false);
 	return (
 		<div>
