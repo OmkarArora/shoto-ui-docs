@@ -1,3 +1,5 @@
+import "./header.css";
+
 export const Header = () => {
-	return <div style={{border: "1px solid red"}}>HEADER</div>
+	return <header className="header">HEADER</header>
 }
