@@ -5,6 +5,13 @@
   height: 100%;
   width: 100%;
   font-size: 1.2rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: auto;
+  width: var(--width-sidenav);
 }
 
 .sidenav .heading {
@@ -59,4 +66,18 @@
 
 .sidenav .ul-inner a {
   padding-left: calc(var(--padding-left) + 1.2rem);
+}
+
+.sidenav.mobile {
+  background-color: #fff;
+  box-shadow: 10px 0px 10px -3px rgba(0, 0, 0, 0.35);
+}
+
+.sidenav.mobile.false {
+  display: none;
+}
+
+.sidenav.mobile.true {
+  display: fixed;
+  z-index: 2;
 }

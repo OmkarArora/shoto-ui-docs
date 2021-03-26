@@ -6,8 +6,9 @@ export const useNav = () => useContext(NavContext);
 
 export const NavProvider = ({children}) => {
 	const [activeNavLink, setNavLink] = useState("gettingstarted");
+	const [mobileNavOpen, setMobileNav] = useState(false);
 
-	let stateData = {activeNavLink, setNavLink};
+	let stateData = {activeNavLink, setNavLink, mobileNavOpen, setMobileNav};
 
 	return(
 		<NavContext.Provider value={stateData}>

@@ -86,7 +86,7 @@ function App() {
 
   return (
     <div className="container-content">
-      <h1>Avatars</h1>
+      <h1>Avatar</h1>
       <h2>Image Avatars</h2>
       <div className="container-output">
         <Avatar

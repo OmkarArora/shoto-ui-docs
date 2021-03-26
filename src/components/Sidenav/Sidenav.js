@@ -1,12 +1,27 @@
 import { Link } from "react-router-dom";
+import { GrClose } from "react-icons/gr";
+import { useWindowSize } from "../useWindowSize";
 import "./sidenav.css";
+import { useNav } from "../contexts/nav-context";
 
 export const Sidenav = () => {
+  const screenWidth = useWindowSize().width;
+  const { mobileNavOpen, setMobileNav } = useNav();
+
   return (
-    <nav className="sidenav">
+    <nav
+      className={
+        screenWidth < 768 ? `sidenav mobile ${mobileNavOpen}` : "sidenav"
+      }
+    >
       <div className="heading">
         <div className="logo">Shoto UI</div>
         <div className="version">v1.2.2</div>
+        {screenWidth < 768 && (
+          <div>
+            <GrClose onClick={() => setMobileNav((prev) => !prev)} />
+          </div>
+        )}
       </div>
       <ul className="ul-outer">
         <li className="link-hoverable">

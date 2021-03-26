@@ -2,7 +2,6 @@
   --width-sidenav: 240px;
   --height-header: 64px;
   height: 100vh;
-  display: grid;
 }
 
 .container-header {
@@ -17,15 +16,18 @@
 }
 
 .container-sidenav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  overflow: auto;
-  width: var(--width-sidenav);
 }
 
 .container-main {
   margin-top: var(--height-header);
   margin-left: var(--width-sidenav);
+}
+
+@media screen and (max-width: 768px) {
+  .container-header {
+    margin-left: 0;
+  }
+  .container-main {
+    margin-left: 0;
+  }
 }
