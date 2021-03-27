@@ -1,9 +1,13 @@
+import { useEffect } from "react";
+import { useNav } from "../contexts/nav-context";
 import { StarRating } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
 
 export const Ratings = () => {
+  const { setNavLink } = useNav();
+  useEffect(() => setNavLink("ratings"), [setNavLink]);
 
   const ratingCodeString = `import React from "react";
 import { StarRating } from "shoto-ui";

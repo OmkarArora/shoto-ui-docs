@@ -9,9 +9,9 @@ function App() {
         <div className="container-header">
           <Header />
         </div>
-        <div className="container-sidenav">
+        {/* <div className="container-sidenav"> */}
           <Sidenav />
-        </div>
+        {/* </div> */}
         <div className="container-main">
         <Switch>
         <Route path="/gettingstarted">

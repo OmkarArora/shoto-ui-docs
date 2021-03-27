@@ -1,9 +1,14 @@
+import { useEffect } from "react";
+import { useNav } from "../contexts/nav-context";
 import { Card } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
 
 export const Cards = () => {
+  const { setNavLink } = useNav();
+  useEffect(() => setNavLink("cards"), [setNavLink]);
+
   const heroCodeString = `import React from "react";
 import { Card } from "shoto-ui";
 
@@ -54,7 +59,7 @@ function CardComp() {
 	  Cards contain content and actions about a single subject.
       </div>
 	  <h2>Hero Card</h2>
-      <div className="container-output">
+      <div className="container-output container-card-hero">
 	  <Card
           type="hero"
           heading="Cyberpunk 2077"

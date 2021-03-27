@@ -1,6 +1,9 @@
 .App {
   --width-sidenav: 240px;
   --height-header: 64px;
+  --z-header: 2;
+  --z-sidenav: 3;
+  --color-primary: #db2777;
   height: 100vh;
 }
 
@@ -11,16 +14,16 @@
   height: var(--height-header);
   width: 100%;
   margin-left: var(--width-sidenav);
-
-  border: 1px solid yellow;
-}
-
-.container-sidenav {
+  z-index: var(--z-header);
+  background-color: white;
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
 }
 
 .container-main {
   margin-top: var(--height-header);
   margin-left: var(--width-sidenav);
+  padding: 0.5rem 1rem 1rem 1rem;
 }
 
 @media screen and (max-width: 768px) {

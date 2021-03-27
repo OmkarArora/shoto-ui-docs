@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useNav } from "../contexts/nav-context";
 import { Badge, Avatar } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -5,6 +7,9 @@ import { BsCheckCircle } from "react-icons/bs";
 import "./docs-style.css";
 
 export const Badges = () => {
+  const { setNavLink } = useNav();
+  useEffect(() => setNavLink("badges"), [setNavLink]);
+
   const badgeCodeString = `import React from "react";
 import { Avatar } from "shoto-ui";
 import { BsCheckCircle } from "react-icons/bs";

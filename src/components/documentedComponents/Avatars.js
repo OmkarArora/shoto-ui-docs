@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useNav } from "../contexts/nav-context";
 import { Avatar } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -5,8 +7,11 @@ import { AiOutlineGithub } from "react-icons/ai";
 import "./docs-style.css";
 
 export const Avatars = () => {
+  const { setNavLink } = useNav();
+  useEffect(() => setNavLink("avatars"), [setNavLink]);
+
   const imageCodeString = `import React from "react";
-import { Avatar } from "shoto-ui;
+import { Avatar } from "shoto-ui";
 	
 function AvatarComp() {
 	return (
@@ -15,10 +20,9 @@ function AvatarComp() {
 }`;
 
   const letterCodeString = `import React from "react";
-import ReactDOM from "react-dom";
-import { Avatar } from "shoto-ui;
+import { Avatar } from "shoto-ui";
 	
-function App() {
+function AvatarComponent() {
 	return (
 		<div>
 			<Avatar bgColor="yellow">J</Avatar>
@@ -28,10 +32,9 @@ function App() {
 }`;
 
   const sizeCodeString = `import React from "react";
-import ReactDOM from "react-dom";
-import { Avatar } from "shoto-ui;
+import { Avatar } from "shoto-ui";
 	
-function App() {
+function AvatarComponent() {
 	return (
 		<div>
 			<Avatar
@@ -56,11 +59,10 @@ function App() {
 }`;
 
   const iconCodeString = `import React from "react";
-import ReactDOM from "react-dom";
-import { Avatar } from "shoto-ui;
+import { Avatar } from "shoto-ui";
 import { AiOutlineGithub } from "react-icons/ai";
 
-function App() {
+function AvatarComponent() {
 	return (
 		<div>
           <Avatar><AiOutlineGithub/></Avatar>
@@ -72,10 +74,9 @@ function App() {
 }`;
 
   const fallbackCodeString = `import React from "react";
-import ReactDOM from "react-dom";
-import { Avatar } from "shoto-ui;
+import { Avatar } from "shoto-ui";
 
-function App() {
+function AvatarComponent() {
 	return (
 		<div>
           <Avatar src="./broken-image.png"/>

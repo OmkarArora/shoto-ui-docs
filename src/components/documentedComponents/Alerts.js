@@ -1,9 +1,14 @@
+import { useEffect } from "react";
+import { useNav } from "../contexts/nav-context";
 import { Alert } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
 
 export const Alerts = () => {
+  const { setNavLink } = useNav();
+  useEffect(() => setNavLink("alerts"), [setNavLink]);
+
   const alertCodeString = `import React from "react";
 import { Alert } from "shoto-ui";
 
@@ -25,7 +30,7 @@ function AlertComp() {
         An alert displays a short, important message in a way that attracts the
         user's attention without interrupting the user's task.
       </div>
-     
+
       <div className="container-output">
         <div className="container-alert">
           <Alert severity="warning">Warning</Alert>

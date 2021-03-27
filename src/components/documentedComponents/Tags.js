@@ -1,9 +1,13 @@
+import { useEffect } from "react";
+import { useNav } from "../contexts/nav-context";
 import { Tag } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
 
 export const Tags = () => {
+  const { setNavLink } = useNav();
+  useEffect(() => setNavLink("tags"), [setNavLink]);
 
   const tagCodeString = `import React from "react";
 import { Tag } from "shoto-ui";

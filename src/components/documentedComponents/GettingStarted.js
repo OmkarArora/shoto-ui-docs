@@ -1,9 +1,13 @@
+import { useEffect } from "react";
+import { useNav } from "../contexts/nav-context";
 import { Avatar } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
 
 export const GettingStarted = () => {
+  const { setNavLink } = useNav();
+  useEffect(() => setNavLink("gettingstarted"), [setNavLink]);
 
   const usageCodeString = `import React from "react";
 import ReactDOM from "react-dom";
@@ -38,16 +42,18 @@ ReactDOM.render(<App />, document.querySelector('#app'));`;
       </div>
 
       <h2>Quick start</h2>
+      
+      <div className="container-output">
+        <Avatar alt="John Doe" src="/image.png" />
+      </div>
+
       <div className="container-code">
         <SyntaxHighliter language="javascript" style={vscDarkPlus} wrapLongLines={true}>
           {usageCodeString}
         </SyntaxHighliter>
       </div>
 
-      <h3>Output</h3>
-      <div className="container-output">
-        <Avatar alt="John Doe" src="/image.png" />
-      </div>
+      
     </div>
   );
 };

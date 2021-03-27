@@ -3,9 +3,50 @@
   font-weight: 500;
 }
 
+.container-content h1,
+.container-content h2,
+.container-content h3 {
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+.container-content .subtext {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.container-content .container-output {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container-content .container-output.container-card-hero {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.container-output.container-card-hero .shoto-card-hero {
+  width: 450px;
+}
+
+.container-card-hero .shoto-card-hero .overlay {
+  padding: 1rem 0 1rem 0.6rem;
+}
+
+.container-content .container-code {
+  margin: 1rem 0 1.5rem 0;
+}
+
 .container-alert {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin: 0 1rem;
+  width: 100%;
 }
