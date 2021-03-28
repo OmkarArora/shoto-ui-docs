@@ -7,8 +7,9 @@ import { BsCheckCircle } from "react-icons/bs";
 import "./docs-style.css";
 
 export const Badges = () => {
-  const { setNavLink } = useNav();
+  const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("badges"), [setNavLink]);
+  useEffect(() => setMobileNav(false), [setMobileNav]);
 
   const badgeCodeString = `import React from "react";
 import { Avatar } from "shoto-ui";

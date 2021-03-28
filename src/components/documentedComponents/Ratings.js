@@ -6,9 +6,10 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
 
 export const Ratings = () => {
-  const { setNavLink } = useNav();
+  const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("ratings"), [setNavLink]);
-
+  useEffect(() => setMobileNav(false), [setMobileNav]);
+  
   const ratingCodeString = `import React from "react";
 import { StarRating } from "shoto-ui";
 

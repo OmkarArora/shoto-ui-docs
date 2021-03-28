@@ -13,6 +13,7 @@
 .container-content .subtext {
   font-size: 1.1rem;
   margin-bottom: 1rem;
+  width: var(--width-contents);
 }
 
 .container-content .container-output {
@@ -23,6 +24,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  width: var(--width-contents);
 }
 
 .container-content .container-output.container-card-hero {
@@ -41,6 +43,11 @@
 
 .container-content .container-code {
   margin: 1rem 0 1.5rem 0;
+  width: var(--width-contents);
+}
+
+.container-code pre span {
+  font-size: 0.9rem;
 }
 
 .container-alert {
@@ -49,4 +56,13 @@
   gap: 0.5rem;
   margin: 0 1rem;
   width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .container-content .subtext,
+  .container-content .container-output,
+  .container-content .container-output,
+  .container-content .container-code {
+    width: auto;
+  }
 }

@@ -8,9 +8,10 @@ import "./docs-style.css";
 export const Snackbars = () => {
   const [snackbarOpen, setSnackbar] = useState(false);
 
-  const { setNavLink } = useNav();
+  const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("snackbars"), [setNavLink]);
-
+  useEffect(() => setMobileNav(false), [setMobileNav]);
+  
   const snackbarCodeString = `import React, {useState} from "react";
 import { Snackbar, Alert } from "shoto-ui";
 

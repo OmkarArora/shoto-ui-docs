@@ -6,8 +6,9 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
 
 export const Tags = () => {
-  const { setNavLink } = useNav();
+  const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("tags"), [setNavLink]);
+  useEffect(() => setMobileNav(false), [setMobileNav]);
 
   const tagCodeString = `import React from "react";
 import { Tag } from "shoto-ui";

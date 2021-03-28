@@ -18,14 +18,16 @@ export const Sidenav = () => {
         <span className="overlay" onClick={() => setMobileNav(false)}></span>
       )}
       <div className="heading">
+        <Link to="/gettingstarted">
         <div className="logo">
           <div>
             <img src={logo} alt="shoto ui logo" />
           </div>
           <div>
-            Shoto UI<div className="version">v1.2.2</div>
+            Shoto UI<div className="version">v1.2.3</div>
           </div>
         </div>
+        </Link>
       </div>
       <ul className="ul-outer">
         <li className="link-hoverable">

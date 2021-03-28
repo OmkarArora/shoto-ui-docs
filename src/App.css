@@ -1,5 +1,6 @@
 .App {
   --width-sidenav: 240px;
+  --width-contents: 800px;
   --height-header: 64px;
   --z-header: 2;
   --z-sidenav: 3;
@@ -24,6 +25,14 @@
   margin-top: var(--height-header);
   margin-left: var(--width-sidenav);
   padding: 0.5rem 1rem 1rem 1rem;
+  display: flex;
+  padding-left: 10rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .container-main {
+    padding-left: 1rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -31,6 +40,8 @@
     margin-left: 0;
   }
   .container-main {
+    display: block;
     margin-left: 0;
+    padding-left: 1rem;
   }
 }

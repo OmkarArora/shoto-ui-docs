@@ -6,8 +6,9 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
 
 export const Alerts = () => {
-  const { setNavLink } = useNav();
+  const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("alerts"), [setNavLink]);
+  useEffect(() => setMobileNav(false), [setMobileNav]);
 
   const alertCodeString = `import React from "react";
 import { Alert } from "shoto-ui";

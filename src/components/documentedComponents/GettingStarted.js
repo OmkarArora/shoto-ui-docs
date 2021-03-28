@@ -6,8 +6,9 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
 
 export const GettingStarted = () => {
-  const { setNavLink } = useNav();
+  const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("gettingstarted"), [setNavLink]);
+  useEffect(() => setMobileNav(false), [setMobileNav]);
 
   const usageCodeString = `import React from "react";
 import ReactDOM from "react-dom";

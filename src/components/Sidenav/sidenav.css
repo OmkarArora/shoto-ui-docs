@@ -57,6 +57,13 @@
   padding: 0.8rem 0;
 }
 
+.sidenav .heading a {
+  display: flex;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
 .sidenav a.active {
   background-color: rgba(0, 0, 0, 0.04);
 }

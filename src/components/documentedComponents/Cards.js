@@ -6,9 +6,10 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
 
 export const Cards = () => {
-  const { setNavLink } = useNav();
+  const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("cards"), [setNavLink]);
-
+  useEffect(() => setMobileNav(false), [setMobileNav]);
+  
   const heroCodeString = `import React from "react";
 import { Card } from "shoto-ui";
 
@@ -29,7 +30,7 @@ function CardComp() {
 	);
 }`;
 
-const showcaseCodeString = `import React from "react";
+  const showcaseCodeString = `import React from "react";
 import { Card } from "shoto-ui";
 
 function CardComp() {
@@ -56,11 +57,11 @@ function CardComp() {
     <div className="container-content">
       <h1>Card</h1>
       <div className="subtext">
-	  Cards contain content and actions about a single subject.
+        Cards contain content and actions about a single subject.
       </div>
-	  <h2>Hero Card</h2>
+      <h2>Hero Card</h2>
       <div className="container-output container-card-hero">
-	  <Card
+        <Card
           type="hero"
           heading="Cyberpunk 2077"
           subtext="$70"
@@ -71,7 +72,7 @@ function CardComp() {
           bgImage="https://c4.wallpaperflare.com/wallpaper/39/346/426/digital-art-men-city-futuristic-night-hd-wallpaper-preview.jpg"
         />
       </div>
-	  <div className="container-code">
+      <div className="container-code">
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -81,9 +82,9 @@ function CardComp() {
         </SyntaxHighliter>
       </div>
 
-	  <h2>Showcase Card</h2>
+      <h2>Showcase Card</h2>
       <div className="container-output">
-	  <Card
+        <Card
           type="showcase"
           colorTag="#FF0099"
           colorRating="#FF9529"
@@ -97,7 +98,7 @@ function CardComp() {
           bgImage="https://cdn1.epicgames.com/17a1f8585f9246808597b30780aaf4fb/offer/Epic_1200x1600_3-1200x1600-09e053727338431398657d372af1e62c.png?h=854&resize=1&w=640"
         />
       </div>
-	  <div className="container-code">
+      <div className="container-code">
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -106,7 +107,6 @@ function CardComp() {
           {showcaseCodeString}
         </SyntaxHighliter>
       </div>
-
     </div>
   );
 };

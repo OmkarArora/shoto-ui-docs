@@ -7,8 +7,9 @@ import { AiOutlineGithub } from "react-icons/ai";
 import "./docs-style.css";
 
 export const Avatars = () => {
-  const { setNavLink } = useNav();
+  const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("avatars"), [setNavLink]);
+  useEffect(() => setMobileNav(false), [setMobileNav]);
 
   const imageCodeString = `import React from "react";
 import { Avatar } from "shoto-ui";
