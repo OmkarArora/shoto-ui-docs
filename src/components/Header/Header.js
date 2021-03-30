@@ -9,8 +9,7 @@ export const Header = () => {
   return (
     <header className="header">
       <div className="container-btn-menu">
-		  {screenWidth<768 && <span><GiHamburgerMenu onClick={() => setMobileNav(prev => !prev)}/></span>}
-        
+		  {screenWidth<768 && <span><GiHamburgerMenu onClick={() => setMobileNav(prev => !prev)}/></span>} 
       </div>
     </header>
   );
