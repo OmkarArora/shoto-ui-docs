@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { NavProvider } from './components';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { NavProvider } from "./components";
 
 ReactDOM.render(
   <React.StrictMode>
     <NavProvider>
-    <App />
+      <App />
     </NavProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

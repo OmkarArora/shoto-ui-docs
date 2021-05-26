@@ -1,10 +1,12 @@
 import { Header, Sidenav, GettingStarted, Avatars, Alerts, Badges, Cards, Tags, Ratings, Snackbars } from "./components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <div className="App">
         <div className="container-header">
           <Header />
