@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNav } from "../contexts/nav-context";
-import { Card } from "shoto-ui";
+import { Card, CardCustom, CardContent, CardImage } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
@@ -9,7 +9,7 @@ export const Cards = () => {
   const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("cards"), [setNavLink]);
   useEffect(() => setMobileNav(false), [setMobileNav]);
-  
+
   const heroCodeString = `import React from "react";
 import { Card } from "shoto-ui";
 
@@ -52,6 +52,33 @@ function CardComp() {
 		</div>
 	);
 }`;
+
+const customCardString = `<CardCustom>
+  <CardImage
+    image="https://c4.wallpaperflare.com/wallpaper/39/346/426/digital-art-men-city-futuristic-night-hd-wallpaper-preview.jpg"
+    title="Cyberpunk"
+  />
+  <CardContent>
+    <div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+          margin: "0.5rem 0 0 0",
+        }}
+      >
+        <div>Cyberpunk 2077</div>
+        <div>
+          Cyberpunk is a subgenre of science fiction in a dystopian
+          futuristic setting that tends to focus on a "combination of
+          lowlife and high tech"
+        </div>
+        <button>Perform Action</button>
+      </div>
+    </div>
+  </CardContent>
+</CardCustom>`
 
   return (
     <div className="container-content">
@@ -105,6 +132,49 @@ function CardComp() {
           wrapLongLines={true}
         >
           {showcaseCodeString}
+        </SyntaxHighliter>
+      </div>
+
+      <h2>Custom Card</h2>
+      <div className="subtext">
+        A customisable card that accomodates custom components with the showcase
+        card layout.
+      </div>
+      <div className="container-output">
+        <CardCustom>
+          <CardImage
+            image="https://c4.wallpaperflare.com/wallpaper/39/346/426/digital-art-men-city-futuristic-night-hd-wallpaper-preview.jpg"
+            title="Cyberpunk"
+          />
+          <CardContent>
+            <div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1rem",
+                  margin: "0.5rem 0 0 0",
+                }}
+              >
+                <div>Cyberpunk 2077</div>
+                <div>
+                  Cyberpunk is a subgenre of science fiction in a dystopian
+                  futuristic setting that tends to focus on a "combination of
+                  lowlife and high tech"
+                </div>
+                <button>Perform Action</button>
+              </div>
+            </div>
+          </CardContent>
+        </CardCustom>
+      </div>
+      <div className="container-code">
+        <SyntaxHighliter
+          language="javascript"
+          style={vscDarkPlus}
+          wrapLongLines={true}
+        >
+          {customCardString}
         </SyntaxHighliter>
       </div>
     </div>
