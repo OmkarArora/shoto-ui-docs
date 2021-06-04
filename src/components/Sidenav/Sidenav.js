@@ -24,7 +24,7 @@ export const Sidenav = () => {
             <img src={logo} alt="shoto ui logo" />
           </div>
           <div>
-            Shoto UI<div className="version">v1.2.4</div>
+            Shoto UI<div className="version">v1.3.3</div>
           </div>
         </div>
         </Link>
@@ -67,10 +67,26 @@ export const Sidenav = () => {
             </li>
             <li className="link-hoverable">
               <Link
+                to="/button"
+                className={activeNavLink === "button" ? "active" : ""}
+              >
+                <button>Button</button>
+              </Link>
+            </li>
+            <li className="link-hoverable">
+              <Link
                 to="/cards"
                 className={activeNavLink === "cards" ? "active" : ""}
               >
                 <button>Card</button>
+              </Link>
+            </li>
+            <li className="link-hoverable">
+              <Link
+                to="/input"
+                className={activeNavLink === "input" ? "active" : ""}
+              >
+                <button>Input</button>
               </Link>
             </li>
             <li className="link-hoverable">

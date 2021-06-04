@@ -1,4 +1,4 @@
-import { Header, Sidenav, GettingStarted, Avatars, Alerts, Badges, Cards, Tags, Ratings, Snackbars } from "./components";
+import { Header, Sidenav, GettingStarted, Avatars, Alerts, Badges, Cards, Tags, Ratings, Snackbars, InputDoc, ButtonDoc } from "./components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import ScrollToTop from "./ScrollToTop";
@@ -27,6 +27,12 @@ function App() {
         </Route>
         <Route path="/badges">
           <Badges/>
+        </Route>
+        <Route path="/button">
+          <ButtonDoc/>
+        </Route>
+        <Route path="/input">
+          <InputDoc/>
         </Route>
         <Route path="/cards">
           <Cards/>

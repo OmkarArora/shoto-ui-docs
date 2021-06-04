@@ -9,7 +9,7 @@ export const Ratings = () => {
   const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("ratings"), [setNavLink]);
   useEffect(() => setMobileNav(false), [setMobileNav]);
-  
+
   const ratingCodeString = `import React from "react";
 import { StarRating } from "shoto-ui";
 
@@ -26,13 +26,14 @@ function RatingComp() {
     <div className="container-content">
       <h1>Rating</h1>
       <div className="subtext">
-      Ratings provide insight regarding others’ opinions and experiences with a product.
+        Ratings provide insight regarding others’ opinions and experiences with
+        a product.
       </div>
-	  <div className="container-output">
-	  <StarRating rating={3.5} color="red" />
-    <StarRating rating={5} color="#FF9529"/>
+      <div className="container-output">
+        <StarRating rating={3.5} color="red" />
+        <StarRating rating={5} color="#FF9529" />
       </div>
-	  <div className="container-code">
+      <div className="container-code">
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}

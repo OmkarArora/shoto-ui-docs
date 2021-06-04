@@ -58,6 +58,14 @@
   width: 100%;
 }
 
+.container-button-sizes {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 1000px) {
   .container-content .subtext,
   .container-content .container-output,
