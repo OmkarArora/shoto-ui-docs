@@ -24,7 +24,7 @@ export const Sidenav = () => {
             <img src={logo} alt="shoto ui logo" />
           </div>
           <div>
-            Shoto UI<div className="version">v1.3.3</div>
+            Shoto UI<div className="version">v1.3.4</div>
           </div>
         </div>
         </Link>
