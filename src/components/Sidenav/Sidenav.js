@@ -19,14 +19,14 @@ export const Sidenav = () => {
       )}
       <div className="heading">
         <Link to="/gettingstarted">
-        <div className="logo">
-          <div>
-            <img src={logo} alt="shoto ui logo" />
+          <div className="logo">
+            <div>
+              <img src={logo} alt="shoto ui logo" />
+            </div>
+            <div>
+              Shoto UI<div className="version">v1.3.5</div>
+            </div>
           </div>
-          <div>
-            Shoto UI<div className="version">v1.3.5</div>
-          </div>
-        </div>
         </Link>
       </div>
       <ul className="ul-outer">
@@ -43,18 +43,18 @@ export const Sidenav = () => {
           <ul className="ul-inner">
             <li className="link-hoverable">
               <Link
-                to="/avatars"
-                className={activeNavLink === "avatars" ? "active" : ""}
-              >
-                <button>Avatar</button>
-              </Link>
-            </li>
-            <li className="link-hoverable">
-              <Link
                 to="/alerts"
                 className={activeNavLink === "alerts" ? "active" : ""}
               >
                 <button>Alert</button>
+              </Link>
+            </li>
+            <li className="link-hoverable">
+              <Link
+                to="/avatars"
+                className={activeNavLink === "avatars" ? "active" : ""}
+              >
+                <button>Avatar</button>
               </Link>
             </li>
             <li className="link-hoverable">
