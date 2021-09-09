@@ -1,7 +1,7 @@
 .App {
   --width-sidenav: 240px;
   --width-contents: 800px;
-  --height-header: 64px;
+  --height-header: 56px;
   --z-header: 2;
   --z-sidenav: 3;
   --color-primary: #db2777;
