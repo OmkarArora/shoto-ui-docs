@@ -4,18 +4,20 @@ import { Badge, Avatar } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { BsCheckCircle } from "react-icons/bs";
+import { MdContentCopy } from "react-icons/md";
+import copy from "copy-to-clipboard";
 import "./docs-style.css";
 
-export const Badges = () => {
+export const Badges = ({ showSnackbar }) => {
   const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("badges"), [setNavLink]);
   useEffect(() => setMobileNav(false), [setMobileNav]);
 
   const badgeCodeString = `import React from "react";
-import { Avatar } from "shoto-ui";
+import { Badge } from "shoto-ui";
 import { BsCheckCircle } from "react-icons/bs";
 
-function BadgeComp() {
+function Badges() {
 	return (
 		<div>
 			<Badge badgeContent={9999} bgColor="red" color="white">
@@ -55,6 +57,15 @@ function BadgeComp() {
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(badgeCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}

@@ -3,9 +3,11 @@ import { useNav } from "../contexts/nav-context";
 import { Input } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { MdContentCopy } from "react-icons/md";
+import copy from "copy-to-clipboard";
 import "./docs-style.css";
 
-export const InputDoc = () => {
+export const InputDoc = ({ showSnackbar }) => {
   const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("input"), [setNavLink]);
   useEffect(() => setMobileNav(false), [setMobileNav]);
@@ -13,22 +15,18 @@ export const InputDoc = () => {
   const defaultInputCodeString = `import React from "react";
 import { Input } from "shoto-ui";
 
-function InputComp() {
+function InputCustom() {
   return (
-        <div>
-			<Input label="Name" type="text" required/>
-        </div>
+    <Input label="Name" type="text" required/>
   );
 }`;
 
   const customInputCodeString = `import React from "react";
 import { Input } from "shoto-ui";
 
-function InputComp() {
+function InputCustom() {
   return (
-        <div>
-			<Input label="Name" type="text" required activeColor="#db2777" textColor="blue" restingColor="green"/>
-        </div>
+    <Input label="Name" type="text" required activeColor="#db2777" textColor="blue" restingColor="green"/>
   );
 }`;
 
@@ -46,6 +44,15 @@ function InputComp() {
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(defaultInputCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -68,6 +75,15 @@ function InputComp() {
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(customInputCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}

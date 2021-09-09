@@ -45,6 +45,28 @@
 .container-content .container-code {
   margin: 1rem 0 1.5rem 0;
   width: var(--width-contents);
+  position: relative;
+}
+
+.container-btn-copy {
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: flex-end;
+
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.container-btn-copy:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.container-snackbar-output .shoto-snackbar-container {
+  z-index: 1;
 }
 
 .container-code pre span {

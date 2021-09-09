@@ -3,9 +3,11 @@ import { useNav } from "../contexts/nav-context";
 import { Avatar } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { MdContentCopy } from "react-icons/md";
+import copy from "copy-to-clipboard";
 import "./docs-style.css";
 
-export const GettingStarted = () => {
+export const GettingStarted = ({ showSnackbar }) => {
   const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("gettingstarted"), [setNavLink]);
   useEffect(() => setMobileNav(false), [setMobileNav]);
@@ -39,6 +41,15 @@ ReactDOM.render(<App />, document.querySelector('#app'));`;
       </div>
       <h2>npm</h2>
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy("npm install shoto-ui");
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -61,6 +72,15 @@ ReactDOM.render(<App />, document.querySelector('#app'));`;
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(usageCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}

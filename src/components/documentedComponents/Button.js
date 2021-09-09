@@ -4,9 +4,11 @@ import { Button } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { AiOutlinePlus } from "react-icons/ai";
+import { MdContentCopy } from "react-icons/md";
+import copy from "copy-to-clipboard";
 import "./docs-style.css";
 
-export const ButtonDoc = () => {
+export const ButtonDoc = ({ showSnackbar }) => {
   const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("button"), [setNavLink]);
   useEffect(() => setMobileNav(false), [setMobileNav]);
@@ -14,18 +16,16 @@ export const ButtonDoc = () => {
   const defaultButtonCodeString = `import React from "react";
 import { Button } from "shoto-ui";
 
-function ButtonComp() {
+function ButtonCustom() {
   return (
-        <div>
-			<Button>Button</Button>
-        </div>
+    <Button>Button</Button>
   );
 }`;
 
   const sizesButtonCodeString = `import React from "react";
 import { Button } from "shoto-ui";
 
-function ButtonComp() {
+function ButtonCustom() {
   return (
         <div>
 			<Button size="small">Small</Button>
@@ -38,55 +38,45 @@ function ButtonComp() {
   const clickButtonCodeString = `import React from "react";
 import { Button } from "shoto-ui";
 
-function ButtonComp() {
+function ButtonCustom() {
   return (
-        <div>
-			<Button onClick={() => alert("Button Clicked")}>Click Me</Button>
-        </div>
+    <Button onClick={() => alert("Button Clicked")}>Click Me</Button>
   );
 }`;
 
   const disabledButtonCodeString = `import React from "react";
 import { Button } from "shoto-ui";
 
-function ButtonComp() {
+function ButtonCustom() {
   return (
-        <div>
-			<Button disabled>DISABLED</Button>
-        </div>
+    <Button disabled>DISABLED</Button>
   );
 }`;
 
   const roundedButtonCodeString = `import React from "react";
 import { Button } from "shoto-ui";
 
-function ButtonComp() {
+function ButtonCustom() {
   return (
-        <div>
-			<Button rounded>Rounded Button</Button>
-        </div>
+    <Button rounded>Rounded Button</Button>
   );
 }`;
 
   const elevatedButtonCodeString = `import React from "react";
 import { Button } from "shoto-ui";
 
-function ButtonComp() {
+function ButtonCustom() {
   return (
-        <div>
-			<Button elevated>Elevated Button</Button>
-        </div>
+    <Button elevated>Elevated Button</Button>
   );
 }`;
 
   const colorsButtonCodeString = `import React from "react";
 import { Button } from "shoto-ui";
 
-function ButtonComp() {
+function ButtonCustom() {
   return (
-        <div>
-			<Button size="large" bgColor="rgb(29, 161, 242)" textColor="#fff" rounded>Custom colors</Button>
-        </div>
+    <Button size="large" bgColor="rgb(29, 161, 242)" textColor="#fff" rounded>Custom colors</Button>
   );
 }`;
 
@@ -94,11 +84,9 @@ function ButtonComp() {
 import { Button } from "shoto-ui";
 import { OutlinePlus } from "./assets/icons";
 
-function ButtonComp() {
+function ButtonCustom() {
   return (
-        <div>
-			<Button size="large" type="icon"><OutlinePlus/></Button>
-        </div>
+    <Button size="large" type="icon"><OutlinePlus/></Button>
   );
 }`;
 
@@ -116,6 +104,15 @@ function ButtonComp() {
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(defaultButtonCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -139,6 +136,15 @@ function ButtonComp() {
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(sizesButtonCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -155,6 +161,15 @@ function ButtonComp() {
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(clickButtonCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -170,6 +185,15 @@ function ButtonComp() {
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(disabledButtonCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -185,6 +209,15 @@ function ButtonComp() {
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(roundedButtonCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -200,6 +233,15 @@ function ButtonComp() {
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(elevatedButtonCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -225,6 +267,15 @@ function ButtonComp() {
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(colorsButtonCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -242,6 +293,15 @@ function ButtonComp() {
       </div>
 
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(iconButtonCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}

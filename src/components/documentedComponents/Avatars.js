@@ -4,9 +4,11 @@ import { Avatar } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { AiOutlineGithub } from "react-icons/ai";
+import { MdContentCopy } from "react-icons/md";
+import copy from "copy-to-clipboard";
 import "./docs-style.css";
 
-export const Avatars = () => {
+export const Avatars = ({ showSnackbar }) => {
   const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("avatars"), [setNavLink]);
   useEffect(() => setMobileNav(false), [setMobileNav]);
@@ -14,7 +16,7 @@ export const Avatars = () => {
   const imageCodeString = `import React from "react";
 import { Avatar } from "shoto-ui";
 	
-function AvatarComp() {
+function AvatarComponent() {
 	return (
 		<Avatar alt="John Doe" src="https://via.placeholder.com/150/FF0000/FFF" />
 	);
@@ -97,6 +99,15 @@ function AvatarComponent() {
         />
       </div>
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(imageCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -112,6 +123,15 @@ function AvatarComponent() {
         <Avatar bgColor="#33F7FF">O</Avatar>
       </div>
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(letterCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -146,6 +166,15 @@ function AvatarComponent() {
         />
       </div>
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(sizeCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -197,6 +226,15 @@ function AvatarComponent() {
         </Avatar>
       </div>
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(iconCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -218,6 +256,15 @@ function AvatarComponent() {
         <Avatar alt="John Doe" bgColor="red" src="./broken-image.jpg" />
       </div>
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(fallbackCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}

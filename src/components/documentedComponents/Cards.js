@@ -3,9 +3,11 @@ import { useNav } from "../contexts/nav-context";
 import { Card, CardCustom, CardContent, CardImage, Button } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { MdContentCopy } from "react-icons/md";
+import copy from "copy-to-clipboard";
 import "./docs-style.css";
 
-export const Cards = () => {
+export const Cards = ({ showSnackbar }) => {
   const { setNavLink, setMobileNav } = useNav();
   useEffect(() => setNavLink("cards"), [setNavLink]);
   useEffect(() => setMobileNav(false), [setMobileNav]);
@@ -13,7 +15,7 @@ export const Cards = () => {
   const heroCodeString = `import React from "react";
 import { Card } from "shoto-ui";
 
-function CardComp() {
+function CardComponent() {
 	return (
 		<div>
 			<Card
@@ -33,7 +35,7 @@ function CardComp() {
   const showcaseCodeString = `import React from "react";
 import { Card } from "shoto-ui";
 
-function CardComp() {
+function CardComponent() {
 	return (
 		<div>
 			<Card
@@ -56,7 +58,7 @@ function CardComp() {
   const customCardString = `import React from "react";
 import { CardCustom, CardContent, CardImage, Button } from "shoto-ui";
 
-function CardComp() {
+function CardComponent() {
 	return (
 		<CardCustom>
           <CardImage
@@ -106,6 +108,15 @@ function CardComp() {
         />
       </div>
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(heroCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -132,6 +143,15 @@ function CardComp() {
         />
       </div>
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(showcaseCodeString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
@@ -175,6 +195,15 @@ function CardComp() {
         </CardCustom>
       </div>
       <div className="container-code">
+        <div
+          className="container-btn-copy"
+          onClick={() => {
+            copy(customCardString);
+            showSnackbar("Source code copied to clipboard", "success");
+          }}
+        >
+          <MdContentCopy />
+        </div>
         <SyntaxHighliter
           language="javascript"
           style={vscDarkPlus}
