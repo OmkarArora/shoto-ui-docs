@@ -27,11 +27,23 @@ ReactDOM.render(<App />, document.querySelector('#app'));`;
       <h1>Installation</h1>
       <div className="subtext">
         Shoto UI is available as an{" "}
-        <span className="text-highlight">npm package</span>
+        <span className="text-highlight">
+          <a
+            href="https://www.npmjs.com/package/shoto-ui"
+            target="_blank"
+            rel="noreferrer"
+          >
+            npm package
+          </a>
+        </span>
       </div>
       <h2>npm</h2>
       <div className="container-code">
-        <SyntaxHighliter language="javascript" style={vscDarkPlus} wrapLongLines={true}>
+        <SyntaxHighliter
+          language="javascript"
+          style={vscDarkPlus}
+          wrapLongLines={true}
+        >
           npm install shoto-ui
         </SyntaxHighliter>
       </div>
@@ -43,18 +55,20 @@ ReactDOM.render(<App />, document.querySelector('#app'));`;
       </div>
 
       <h2>Quick start</h2>
-      
+
       <div className="container-output">
         <Avatar alt="John Doe" src="/image.png" />
       </div>
 
       <div className="container-code">
-        <SyntaxHighliter language="javascript" style={vscDarkPlus} wrapLongLines={true}>
+        <SyntaxHighliter
+          language="javascript"
+          style={vscDarkPlus}
+          wrapLongLines={true}
+        >
           {usageCodeString}
         </SyntaxHighliter>
       </div>
-
-      
     </div>
   );
 };

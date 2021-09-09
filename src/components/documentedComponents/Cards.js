@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNav } from "../contexts/nav-context";
-import { Card, CardCustom, CardContent, CardImage } from "shoto-ui";
+import { Card, CardCustom, CardContent, CardImage, Button } from "shoto-ui";
 import { Prism as SyntaxHighliter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./docs-style.css";
@@ -53,32 +53,38 @@ function CardComp() {
 	);
 }`;
 
-const customCardString = `<CardCustom>
-  <CardImage
-    image="https://c4.wallpaperflare.com/wallpaper/39/346/426/digital-art-men-city-futuristic-night-hd-wallpaper-preview.jpg"
-    title="Cyberpunk"
-  />
-  <CardContent>
-    <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "1rem",
-          margin: "0.5rem 0 0 0",
-        }}
-      >
-        <div>Cyberpunk 2077</div>
-        <div>
-          Cyberpunk is a subgenre of science fiction in a dystopian
-          futuristic setting that tends to focus on a "combination of
-          lowlife and high tech"
-        </div>
-        <button>Perform Action</button>
-      </div>
-    </div>
-  </CardContent>
-</CardCustom>`
+  const customCardString = `import React from "react";
+import { CardCustom, CardContent, CardImage, Button } from "shoto-ui";
+
+function CardComp() {
+	return (
+		<CardCustom>
+          <CardImage
+            image="https://c4.wallpaperflare.com/wallpaper/39/346/426/digital-art-men-city-futuristic-night-hd-wallpaper-preview.jpg"
+            title="Cyberpunk"
+          />
+        <CardContent>
+          <div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem",
+                margin: "0.5rem 0 0 0",
+              }}
+            >
+              <div>Cyberpunk 2077</div>
+              <div>
+                Cyberpunk is a subgenre of science fiction in a dystopian
+                futuristic setting that tends to focus on a "combination of
+                lowlife and high tech"
+              </div>
+              <Button>Perform Action</Button>
+            </div>
+          </div>
+        </CardContent>
+      </CardCustom>
+);`;
 
   return (
     <div className="container-content">
@@ -162,7 +168,7 @@ const customCardString = `<CardCustom>
                   futuristic setting that tends to focus on a "combination of
                   lowlife and high tech"
                 </div>
-                <button>Perform Action</button>
+                <Button>Perform Action</Button>
               </div>
             </div>
           </CardContent>
